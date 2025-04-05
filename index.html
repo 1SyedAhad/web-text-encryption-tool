@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Text Encryption Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Encryption Tool</h1>
+
+        <div class="input-section">
+            <label for="plaintext">Plain Text:</label>
+            <textarea id="plaintext" placeholder="Enter your text here"></textarea>
+        </div>
+
+        <div class="algorithm-section">
+            <label for="algorithm">Encryption Algorithm:</label>
+            <select id="algorithm">
+                <option value="">-- Select Algorithm --</option>
+                <option value="caesar">Caesar Cipher</option>
+                <option value="aes">AES</option>
+                <option value="base64">Base64</option>
+                <option value="sha256">SHA-256 (Hashing)</option>
+            </select>
+        </div>
+
+        <div class="key-section" id="keySection" style="display: none;">
+            <label for="key">Encryption Key (for AES):</label>
+            <input type="text" id="key" placeholder="Enter a secret key">
+        </div>
+
+        <button id="encryptBtn">Encrypt</button>
+
+        <div class="output-section">
+            <label for="ciphertext">Result:</label>
+            <textarea id="ciphertext" placeholder="Encrypted/Hashed text will appear here" readonly></textarea>
+            <button id="copyBtn">Copy</button>
+        </div>
+
+        <div id="error-message" class="error"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
